@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by alfa137 (http://jsbin.com/hurolam/5/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Színóra2.0">
+<link href="https://fonts.googleapis.com/css?family=Cormorant|Merriweather|Montserrat+Alternates|Saira+Semi+Condensed|Sansita" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat+Alternates|Saira+Semi+Condensed|Sansita" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Saira+Semi+Condensed|Sansita" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed|Sansita" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Színóra 2.0</title>
+<style id="jsbin-css">
+* { margin: 0; padding: 0; }
+
+html, body {
+  height: 100vh;
+}
+
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Cormorant', serif;
+font-family: 'Sansita', sans-serif;
+font-family: 'Saira Semi Condensed', sans-serif;
+font-family: 'Merriweather', serif;
+
+.inthe {height: 100vh;
+        width: 100vw;} 
+        
+.clock {text-shadow: 0.1rem 0.1rem blue;
+}
+.clock:hover {
+background-color: red;  
+color: black;  
+  transition: background-color 1.5s ease-in-out;}
+.clock:hover {
+transform: scale(1.2);
+transition: all 0.99s ease-in-out;
+}
+
+#clock04 {
+  font-family: 'Taviraj', serif;
+  font-size: 2rem;
+  font-family:  'Cormorant', serif;
+font-family: 'Montserrat Alternates', sans-serif;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  margin-left: 2rem;
+  margin-right: 10rem;
+  position: relative;
+}
+#clock05 {
+  font-family: 'Sansita', sans-serif;
+  font-size: 5.33rem;
+  margin-top: 6rem;
+  padding-top: 1rem;
+  padding-left: 12rem;
+  position: relative;
+  
+}
+
+#clock06 {
+  font-family: 'Saira Semi Condensed', sans-serif;
+  font-size: 1.8rem;
+  padding-top: 3rem;
+  padding-left: 3.5rem;
+  position: relative;
+  
+  }
+
+#clock07 {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-top: 1rem;
+  margin-left: 25rem;
+  position: relative;
+  font-style: italic;}
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+  <div class="inthe">
+    <div id="clock04" class="clock">12:13:14</div>
+    <div id="clock05" class="clock">12:13:15</div>
+    <div id="clock06" class="clock">12:13:16</div>
+     <div id="clock07" class="clock">12:13:17</div>
+  </div>
+<script id="jsbin-javascript">
+function colorClock(){
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  
+  
+  if (minutes <= 9) {
+    minutes = "0" + minutes;
+  }
+  if (seconds <= 9) {
+    seconds = "0" + seconds;
+  }
+
+  var clock04 = 'Moscow: ' + (hours+1) + '°' + minutes + "'" + seconds + '"';
+  
+  var clock05 = 'Local time: '+ hours + '°' + minutes + "'" + seconds + '"';
+  var clock06 = 'Beijing: ' + (hours+6) + '°' + minutes + "'" + seconds + '"';
+  var clock07 = "hexColor";
+  
+  var hexColor = '#' + 'ff'+ minutes + (seconds*3);
+  var color = '#'+ seconds + '70' + (seconds*3);
+  var clock07 = '#'+ hours + minutes + seconds;
+
+  document.getElementById('clock04').innerHTML = clock04; 
+  document.getElementById('clock05').innerHTML = clock05; 
+  document.getElementById('clock06').innerHTML = clock06; 
+  document.getElementById('clock07').innerHTML = clock07; 
+  document.body.style.color = hexColor;
+  document.body.style.background = color;
+  
+  setTimeout(function() {
+    colorClock();
+  }, 1000);
+}
+
+colorClock();
+</script>
+</body>
+</html>
+
